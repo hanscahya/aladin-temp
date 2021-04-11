@@ -1,8 +1,9 @@
 <template lang="pug">
   div.wrapper-container
-    b-img.bg-img.sm(:src="require('@/assets/bg-sm.jpg')")
     b-img.bg-img.lg(:src="require('@/assets/bg-lg.jpg')")
+
     div.wrapper
+      b-img.bg-img.sm(:src="require('@/assets/bg-sm.png')")
       b-img.logo(:src="require('@/assets/logo.png')")
       b-img.header-text(:src="require('@/assets/header-text.png')")
 
@@ -22,16 +23,7 @@
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      background: {
-        lg: require('@/assets/bg-lg.jpg'),
-        sm: require('@/assets/bg-sm.jpg')
-      }
-    }
-  }
-}
+export default {}
 </script>
 
 <style lang="css" scoped>
@@ -54,6 +46,8 @@ export default {
 @media screen and (max-width: 576px) {
   .wrapper-container .bg-img.sm {
     display: block;
+    position: absolute;
+    z-index: 0;
   }
   .wrapper-container .bg-img.lg {
     display: none;
@@ -78,22 +72,29 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  overflow: scroll;
+}
+@media screen and (max-width: 576px) {
+  .wrapper {
+    background-color: #00f3af;
+    height: fit-content;
+  }
 }
 
 .logo {
   width: 250px;
+  z-index: 1;
 }
 
 .header-text {
   width: 350px;
+  z-index: 1;
 }
 
 .paragraph {
   display: flex;
   margin-top: 50px;
   width: 90%;
+  z-index: 1;
 }
 .paragraph > div {
   padding: 1rem;
@@ -112,14 +113,18 @@ export default {
 
   margin-top: 50px;
   margin-bottom: 50px;
+
+  z-index: 1;
 }
 .app-link .images {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .app-link > .images > img {
   margin: 10px;
   width: 130px;
+  object-fit: contain;
 }
 @media screen and (min-width: 768px) {
   .app-link {
