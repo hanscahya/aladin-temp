@@ -33,12 +33,9 @@ export default {}
   align-items: center;
 
   position: relative;
-
-  height: 100vh;
   width: 100vw;
 }
 .wrapper-container .bg-img {
-  height: 100vh;
   width: 100vw;
   object-fit: cover;
   object-position: center;
@@ -60,6 +57,7 @@ export default {}
   }
   .wrapper-container .bg-img.lg {
     display: block;
+    height: 100vh;
   }
 }
 
@@ -99,6 +97,11 @@ export default {}
 }
 .paragraph > div {
   padding: 1rem;
+}
+@media screen and (max-width: 576px) {
+  .paragraph {
+    flex-direction: column;
+  }
 }
 @media screen and (min-width: 768px) {
   .paragraph {
