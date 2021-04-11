@@ -1,11 +1,119 @@
 <template lang="pug">
-  div
-    b-img.w-100(:src="require('@/assets/20210409_Aladin_Landing Page-02.jpg')")
+  div.wrapper-container
+    b-img.bg-img(:src="require('@/assets/bg-sm.jpg')" :srcset="`${background.sm} 576w, ${background.lg} 1280w`")
+    div.wrapper
+      b-img.logo(:src="require('@/assets/logo.png')")
+      b-img.header-text(:src="require('@/assets/header-text.png')")
+
+      div.paragraph
+        div
+          p Introducing Aladin: a next-gen, digital-first Sharia finance platform for the modern Indonesian.
+          p Aladin was built with a simple purpose in mind - to create new opportunities for you to connect with the values you believe in, the passions that inspire you and the peers you care about.
+        div
+          p Stay tuned for unparalleled access to smart money management tools, always-on customised promos at your favourite stores and new ways to give back to the community.
+          p Are you ready?
+      
+      div.app-link
+        span Coming soon on
+        div.images
+          b-img(src="https://i.imgur.com/jzgW7wU.png")
+          b-img(src="https://i.imgur.com/3y4Iue7.png")
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      background: {
+        lg: require('@/assets/bg-lg.jpg'),
+        sm: require('@/assets/bg-sm.jpg')
+      }
+    }
+  }
+}
 </script>
 
-<style>
+<style lang="css" scoped>
+.wrapper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  height: 100vh;
+  width: 100vw;
+}
+.wrapper-container .bg-img {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: scroll;
+}
+
+.logo {
+  width: 250px;
+}
+
+.header-text {
+  width: 350px;
+}
+
+.paragraph {
+  display: flex;
+  margin-top: 50px;
+  width: 90%;
+}
+.paragraph > div {
+  padding: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .paragraph {
+    width: 50%;
+  }
+}
+
+.app-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.app-link .images {
+  display: flex;
+  justify-content: center;
+}
+.app-link > .images > img {
+  margin: 10px;
+  width: 130px;
+}
+@media screen and (min-width: 768px) {
+  .app-link {
+    width: 300px;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+  }
+}
 </style>
