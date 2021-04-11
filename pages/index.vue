@@ -1,6 +1,7 @@
 <template lang="pug">
   div.wrapper-container
-    b-img.bg-img(:src="require('@/assets/bg-sm.jpg')" :srcset="`${background.sm} 576w, ${background.lg} 1280w`")
+    b-img.bg-img.sm(:src="require('@/assets/bg-sm.jpg')")
+    b-img.bg-img.lg(:src="require('@/assets/bg-lg.jpg')")
     div.wrapper
       b-img.logo(:src="require('@/assets/logo.png')")
       b-img.header-text(:src="require('@/assets/header-text.png')")
@@ -49,6 +50,22 @@ export default {
   width: 100vw;
   object-fit: cover;
   object-position: center bottom;
+}
+@media screen and (max-width: 576px) {
+  .wrapper-container .bg-img.sm {
+    display: block;
+  }
+  .wrapper-container .bg-img.lg {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .wrapper-container .bg-img.sm {
+    display: none;
+  }
+  .wrapper-container .bg-img.lg {
+    display: block;
+  }
 }
 
 .wrapper {
