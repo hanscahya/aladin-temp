@@ -18,8 +18,8 @@
       div.app-link
         span Coming soon on
         div.images
-          b-img(src="https://i.imgur.com/jzgW7wU.png")
-          b-img(src="https://i.imgur.com/3y4Iue7.png")
+          b-img(:src="require('@/assets/app-store.png')")
+          b-img(:src="require('@/assets/google-play.png')")
 </template>
 
 <script>
