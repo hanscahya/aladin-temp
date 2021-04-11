@@ -41,7 +41,7 @@ export default {}
   height: 100vh;
   width: 100vw;
   object-fit: cover;
-  object-position: center bottom;
+  object-position: center;
 }
 @media screen and (max-width: 576px) {
   .wrapper-container .bg-img.sm {
