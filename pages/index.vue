@@ -114,8 +114,9 @@ export default {
 }
 
 .header-text {
-  width: 350px;
+  width: 300px;
   z-index: 1;
+  margin-top: 50px;
 }
 
 .paragraph {
